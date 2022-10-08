@@ -1,0 +1,29 @@
+{
+	"name": "bookshelf-api",
+	"version": "1.0.0",
+	"description": "submission dicoding",
+	"main": "index.js",
+	"scripts": {
+		"start": "NODE_ENV=production node ./src/server",
+		"dev": "nodemon ./src/server",
+		"lint": "eslint ./src"
+	},
+	"keywords": [
+		"hapi",
+		"api"
+	],
+	"author": "Ma'isy Yazid I",
+	"license": "ISC",
+	"dependencies": {
+		"@hapi/hapi": "^20.2.2",
+		"uuid": "^9.0.0"
+	},
+	"devDependencies": {
+		"eslint": "^7.32.0 || ^8.2.0",
+		"eslint-config-airbnb-base": "^15.0.0",
+		"eslint-config-prettier": "^8.5.0",
+		"eslint-plugin-import": "^2.25.2",
+		"eslint-plugin-prettier": "^4.2.1",
+		"nodemon": "^2.0.20"
+	}
+}
