@@ -1,5 +1,5 @@
-const books = require('./books');
 const { v4: uuidv4 } = require('uuid');
+const books = require('./books');
 
 exports.addBookHandler = (request, h) => {
   const {
@@ -79,14 +79,14 @@ exports.getAllBooksHandler = (request, h) => {
     const search = name.toLowerCase();
     data = data.filter(e => e.name.toLowerCase().includes(search));
   }
-  if (reading == 1 || +reading == 0) {
+  if (reading === '1' || reading === '0') {
     data = data.filter(e =>
-      reading == 1 ? e.reading === true : e.reading === false
+      reading === '1' ? e.reading === true : e.reading === false
     );
   }
-  if (finished == 1 || finished == 0) {
+  if (finished === '1' || finished === '0') {
     data = data.filter(e =>
-      finished == 1 ? e.finished === true : e.finished === false
+      finished === '1' ? e.finished === true : e.finished === false
     );
   }
 
@@ -107,7 +107,7 @@ exports.getAllBooksHandler = (request, h) => {
 exports.getBookByIdHandler = (request, h) => {
   const { id } = request.params;
 
-  const book = books.filter(book => book.id === id)[0];
+  const book = books.filter(b => b.id === id)[0];
 
   if (book !== undefined) {
     return {
